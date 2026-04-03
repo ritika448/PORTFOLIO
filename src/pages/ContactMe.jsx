@@ -20,7 +20,7 @@ const ContactMe = () => {
     setStatus('sending');
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('https://portfolio-backend-s832.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -60,18 +60,18 @@ const ContactMe = () => {
           <div className="contact-info-wrapper">
             <h3 style={{ fontSize: '1.8rem', marginBottom: '1.5rem' }}>Let's talk!</h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2.5rem', lineHeight: '1.7' }}>
-              I’m currently available for full-time roles and freelance opportunities. 
-              If you’re looking for a MERN stack developer who loves turning complex 
-              problems into simple, beautiful, and intuitive solutions, I’d love to 
-              hear from you. Whether you have a project in mind or just want to 
+              I’m currently available for full-time roles and freelance opportunities.
+              If you’re looking for a MERN stack developer who loves turning complex
+              problems into simple, beautiful, and intuitive solutions, I’d love to
+              hear from you. Whether you have a project in mind or just want to
               discuss the latest in tech, let’s start a conversation! 🚀
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <div style={{ 
-                  background: 'var(--surface)', 
-                  padding: '1rem', 
+                <div style={{
+                  background: 'var(--surface)',
+                  padding: '1rem',
                   borderRadius: '50%',
                   color: 'var(--primary)',
                   border: '1px solid rgba(37, 99, 235, 0.2)'
@@ -85,9 +85,9 @@ const ContactMe = () => {
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <div style={{ 
-                  background: 'var(--surface)', 
-                  padding: '1rem', 
+                <div style={{
+                  background: 'var(--surface)',
+                  padding: '1rem',
                   borderRadius: '50%',
                   color: 'var(--primary)',
                   border: '1px solid rgba(37, 99, 235, 0.2)'
@@ -101,9 +101,9 @@ const ContactMe = () => {
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <div style={{ 
-                  background: 'var(--surface)', 
-                  padding: '1rem', 
+                <div style={{
+                  background: 'var(--surface)',
+                  padding: '1rem',
                   borderRadius: '50%',
                   color: 'var(--primary)',
                   border: '1px solid rgba(37, 99, 235, 0.2)'
@@ -121,8 +121,8 @@ const ContactMe = () => {
           <form onSubmit={handleSubmit} className="contact-form-wrapper">
             <div className="form-group">
               <label className="form-label">Name</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 name="name"
                 className="form-input"
                 value={formData.name}
@@ -132,8 +132,8 @@ const ContactMe = () => {
             </div>
             <div className="form-group">
               <label className="form-label">Email</label>
-              <input 
-                type="email" 
+              <input
+                type="email"
                 name="email"
                 className="form-input"
                 value={formData.email}
@@ -143,7 +143,7 @@ const ContactMe = () => {
             </div>
             <div className="form-group">
               <label className="form-label">Message</label>
-              <textarea 
+              <textarea
                 name="message"
                 className="form-textarea"
                 value={formData.message}
@@ -152,14 +152,14 @@ const ContactMe = () => {
                 rows="5"
               ></textarea>
             </div>
-            <button 
-              className="btn-primary" 
+            <button
+              className="btn-primary"
               disabled={status === 'sending'}
-              style={{ 
-                width: '100%', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center', 
+              style={{
+                width: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 gap: '0.8rem',
                 opacity: status === 'sending' ? 0.7 : 1,
                 cursor: status === 'sending' ? 'not-allowed' : 'pointer'
