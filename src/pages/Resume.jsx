@@ -105,7 +105,7 @@ const Resume = () => {
           <span className="hero-subtitle">My Credentials</span>
           <h2 className="section-title">Resume</h2>
           
-          <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '2rem' }}>
+          <div className="resume-actions">
             <button onClick={scrollToResume} className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
               <FileText size={18} />
               PREVIEW RESUME
