@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --background: #010101; /* Deep Pure Black */
+  --surface: #0a0a0a;    /* Very Dark Surface */
+  --primary: #2563eb;    /* Vibrant Royal Blue */
+  --secondary: #111111;
+  --text-main: #ffffff;
+  --text-secondary: #94a3b8;
+  --accent: #1e40af;     /* Deep Blue accent */
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust based on navbar height */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Remove any global blue viewport glows or borders */
+body::after, body::before, html::after, html::before {
+  content: none !important;
+  display: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.App {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1.2rem;
+  }
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(226, 29, 29, 0.4);
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, var(--text-main), var(--text-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+  
+  html {
+    font-size: 14px; /* Scale down all rem based values slightly */
+  }
+}
+
+@media (max-width: 480px) {
+  .section-padding {
+    padding: 40px 0;
+  }
+}
