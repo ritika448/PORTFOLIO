@@ -3,7 +3,6 @@ import Hero from '../components/Hero';
 import AboutSection from '../components/AboutSection';
 import ProjectsSection from '../components/ProjectsSection';
 import ExperienceSection from '../components/InternshipsSection';
-import ContactMe from './ContactMe';
 
 const Home = () => {
   return (
@@ -12,7 +11,6 @@ const Home = () => {
       <AboutSection />
       <ProjectsSection />
       <ExperienceSection />
-      <ContactMe />
     </div>
   );
 };

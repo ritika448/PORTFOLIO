@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaInstagram, FaGithub, FaLinkedinIn } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 
 import './Footer.css';
 
@@ -15,7 +16,7 @@ const Footer = () => {
             web development, feel free to reach out. Let’s build something 
             extraordinary together!
           </p>
-          <a href="/contact" className="btn-primary cta-btn">Contact</a>
+          <Link to="/contact" className="btn-primary cta-btn">Contact</Link>
         </div>
 
         <div className="footer-divider"></div>

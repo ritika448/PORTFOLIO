@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Typewriter } from 'react-simple-typewriter';
 import heroImage from '../assets/hero_portrait.png';
 import './Hero.css';
@@ -22,7 +23,10 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <span className="hero-label">RITIKA BHANGADE</span>
+          <div className="hero-name-wrapper">
+            <span className="hero-label">RITIKA BHANGADE</span>
+            <span className="hero-subtitle">Software Engineer</span>
+          </div>
           <h1 className="hero-title">
             Crafting Digital <span className="highlight-text">Excellence</span> <br />
             with Code & Design
@@ -47,7 +51,7 @@ const Hero = () => {
           </p>
 
           <div className="hero-actions">
-            <a href="#contact" className="btn-primary" onClick={(e) => handleScroll(e, '#contact')}>START A PROJECT</a>
+            <Link to="/contact" className="btn-primary">START A PROJECT</Link>
             <a href="#projects" className="btn-lite" onClick={(e) => handleScroll(e, '#projects')}>VIEW WORK</a>
           </div>
         </motion.div>

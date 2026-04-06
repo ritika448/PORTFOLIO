@@ -21,7 +21,7 @@ const Navbar = () => {
     { title: 'PROJECTS', path: '/', isHash: true, hash: '#projects' },
     { title: 'EXPERIENCE', path: '/', isHash: true, hash: '#experience' },
     { title: 'ABOUT ME', path: '/', isHash: true, hash: '#about' },
-    { title: 'CONTACT', path: '/', isHash: true, hash: '#contact' },
+    { title: 'CONTACT', path: '/contact', isHash: false },
   ];
 
   const handleScroll = (e, link) => {

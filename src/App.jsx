@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Resume from './pages/Resume';
+import ContactMe from './pages/ContactMe';
 import Footer from './components/Footer';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/resume" element={<Resume />} />
+            <Route path="/contact" element={<ContactMe />} />
             {/* Catch-all for other paths to prevent 404s while transitioning */}
             <Route path="*" element={<Home />} />
           </Routes>
