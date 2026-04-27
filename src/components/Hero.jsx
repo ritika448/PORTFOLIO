@@ -63,7 +63,7 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
           <div className="hero-image-wrapper small-frame">
-            <img src={heroImage} alt="Ritika Bhangade" className="hero-image grayscale" />
+            <img src={heroImage} alt="Ritika Bhangade" className="hero-image" />
             <div className="hero-image-glow"></div>
             <div className="hero-frame-accent"></div>
           </div>
