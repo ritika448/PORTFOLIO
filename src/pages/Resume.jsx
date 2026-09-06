@@ -103,12 +103,12 @@ const Resume = () => {
       <div className="container">
         <div className="resume-header">
           <span className="hero-subtitle">My Credentials</span>
-          <h2 className="section-title">Resume</h2>
+          <h2 className="section-title">Portfolio</h2>
           
           <div className="resume-actions">
             <button onClick={scrollToResume} className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
               <FileText size={18} />
-              PREVIEW RESUME
+              PREVIEW PORTFOLIO
             </button>
             <a href="/resume.pdf" download className="btn-lite" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
               <Download size={18} />
@@ -117,93 +117,14 @@ const Resume = () => {
           </div>
         </div>
 
-        <div ref={resumeRef} className="resume-paper">
-          <div className="resume-top">
-            <h1 className="resume-name">{resumeData.personal.name}</h1>
-            <p className="resume-role">{resumeData.personal.role}</p>
-            
-            <div className="resume-contact-grid">
-              <div className="resume-contact-item"><Mail size={14} /> {resumeData.personal.email}</div>
-              <div className="resume-contact-item"><Phone size={14} /> {resumeData.personal.phone}</div>
-              <div className="resume-contact-item"><MapPin size={14} /> {resumeData.personal.location}</div>
-            </div>
-            
-            <div className="resume-contact-grid" style={{ marginTop: '5px' }}>
-              <div className="resume-contact-item">
-                <a href={`https://github.com/${resumeData.personal.github}`} target="_blank" rel="noopener noreferrer">
-                  <FaGithub size={14} /> GitHub
-                </a>
-              </div>
-              <div className="resume-contact-item">
-                <a href={`https://linkedin.com/in/${resumeData.personal.linkedin}`} target="_blank" rel="noopener noreferrer">
-                  <FaLinkedinIn size={14} /> LinkedIn
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <section className="resume-section">
-            <h3 className="resume-section-title">Technical Skills</h3>
-            <div style={{ fontSize: '0.95rem', marginTop: '12px' }}>
-              <p style={{ margin: '6px 0' }}><strong>Hard Skills:</strong> {resumeData.skills.hard}</p>
-              <p style={{ margin: '6px 0' }}><strong>Soft Skills:</strong> {resumeData.skills.soft}</p>
-            </div>
-          </section>
-
-          <section className="resume-section">
-            <h3 className="resume-section-title">Professional Experience</h3>
-            {resumeData.experience.map((exp, i) => (
-              <div key={i} className="resume-exp-item">
-                <div className="resume-exp-header">
-                  <h4 className="resume-exp-role">{exp.role}</h4>
-                  <span className="resume-exp-period">{exp.period}</span>
-                </div>
-                <p className="resume-exp-company">{exp.company}</p>
-                <p className="resume-exp-stack">{exp.stack}</p>
-                <ul className="resume-list">
-                  {exp.highlights.map((h, j) => (
-                    <li key={j}>{h}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </section>
-
-          <section className="resume-section">
-            <h3 className="resume-section-title">Technical Projects</h3>
-            {resumeData.projects.map((proj, i) => (
-              <div key={i} className="resume-exp-item">
-                <div className="resume-exp-header">
-                  <div className="resume-exp-role">{proj.name}</div>
-                  <div className="resume-exp-period">2025</div>
-                </div>
-                <p className="resume-exp-stack">{proj.stack}</p>
-                <div style={{ display: 'flex', gap: '15px', marginTop: '4px' }}>
-                  <a href={proj.link} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.8rem', color: '#2563eb', textDecoration: 'none', fontWeight: '500' }}>
-                    <ExternalLink size={13} /> Live Demo
-                  </a>
-                </div>
-                <ul className="resume-list">
-                  <li>{proj.description}</li>
-                </ul>
-              </div>
-            ))}
-          </section>
-
-          <section className="resume-section" style={{ marginBottom: 0 }}>
-            <h3 className="resume-section-title">Education</h3>
-            {resumeData.education.map((edu, i) => (
-              <div key={i} className="resume-edu-item">
-                <div>
-                  <div className="resume-edu-school">{edu.school}</div>
-                  <div className="resume-edu-degree">{edu.degree}</div>
-                </div>
-                <div className="resume-edu-score">
-                  {edu.score}
-                </div>
-              </div>
-            ))}
-          </section>
+        <div ref={resumeRef} className="resume-paper" style={{ padding: 0, height: '85vh', minHeight: '800px', width: '100%', maxWidth: '1000px', margin: '0 auto', overflow: 'hidden', borderRadius: '12px' }}>
+          <iframe 
+            src="/resume.pdf" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 'none', display: 'block' }} 
+            title="Ritika Bhangade Portfolio"
+          />
         </div>
       </div>
     </motion.div>

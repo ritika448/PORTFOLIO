@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FileText } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import aboutImage from '../assets/about_portrait.png';
 import './AboutSection.css';
 
@@ -70,8 +70,8 @@ const AboutSection = () => {
           </div>
 
           <Link to="/resume" className="btn-primary btn-with-icon">
-            <FileText size={18} />
-            Download CV
+            <ExternalLink size={18} />
+            VIEW PORTFOLIO
           </Link>
         </motion.div>
       </div>

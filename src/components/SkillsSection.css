@@ -1,0 +1,287 @@
+.skills-section {
+  background-color: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.rpg-tree-container {
+  width: 100%;
+  overflow-x: auto; /* Allow scrolling on small screens */
+  padding: 2rem 1rem 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Custom Scrollbar for the tree container */
+.rpg-tree-container::-webkit-scrollbar {
+  height: 8px;
+}
+.rpg-tree-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+}
+.rpg-tree-container::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.rpg-tree {
+  display: inline-block;
+  min-width: max-content; /* Ensure tree doesn't squish */
+}
+
+/* Base Tree Styles */
+.rpg-tree ul {
+  padding-top: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.rpg-tree li {
+  text-align: center;
+  position: relative;
+  padding: 40px 15px 0 15px;
+}
+
+/* Horizontal connectors for siblings */
+.rpg-tree li::before, .rpg-tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 3px solid rgba(37, 99, 235, 0.3);
+  width: 50%;
+  height: 40px;
+}
+
+.rpg-tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 3px solid rgba(37, 99, 235, 0.3);
+}
+
+.rpg-tree li:only-child::after, .rpg-tree li:only-child::before {
+  display: none;
+}
+.rpg-tree li:only-child {
+  padding-top: 0;
+}
+.rpg-tree li:first-child::before, .rpg-tree li:last-child::after {
+  border: 0 none;
+}
+.rpg-tree li:last-child::before {
+  border-right: 3px solid rgba(37, 99, 235, 0.3);
+  border-radius: 0 12px 0 0;
+}
+.rpg-tree li:first-child::after {
+  border-radius: 12px 0 0 0;
+}
+
+/* Downward connectors from parents */
+.rpg-tree ul ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 3px solid rgba(37, 99, 235, 0.3);
+  width: 0;
+  height: 40px;
+  transform: translateX(-50%);
+}
+
+/* Vertical Leaves (Stacking downwards without horizontal branches) */
+.rpg-tree ul.vertical-leaves {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+  align-items: center;
+}
+.rpg-tree ul.vertical-leaves::before {
+  display: none;
+}
+.rpg-tree ul.vertical-leaves li {
+  padding: 25px 0 0 0;
+}
+.rpg-tree ul.vertical-leaves li::before, .rpg-tree ul.vertical-leaves li::after {
+  display: none; /* Disable horizontal lines for vertical leaves */
+}
+/* Vertical line connecting leaves */
+.rpg-tree ul.vertical-leaves li::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 25px;
+  border-left: 3px solid rgba(37, 99, 235, 0.3);
+  transform: translateX(-50%);
+}
+
+/* Node Styling */
+.node {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 2px solid rgba(0,0,0,0.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: default;
+}
+
+.node:hover {
+  transform: scale(1.15) translateY(-5px);
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+}
+
+.root-node {
+  font-size: 1.3rem;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  padding: 16px 36px;
+  border-radius: 40px;
+  border: none;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cat-node {
+  background: rgba(37, 99, 235, 0.05);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 30px;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.15);
+}
+
+.leaf-node {
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: var(--background);
+  color: var(--text-secondary);
+}
+
+/* Add a glowing effect to the lines on hover */
+.rpg-tree li:hover > .node ~ ul::before,
+.rpg-tree li:hover > .node ~ ul li::before,
+.rpg-tree li:hover > .node ~ ul li::after {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+}
+
+@media (max-width: 1200px) {
+  .rpg-tree-container {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+}
+
+.mobile-accordion-container {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-accordion-container {
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
+  }
+  
+  .accordion-root-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+  }
+  
+  .accordion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .accordion-item {
+    background: var(--surface);
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+  
+  .accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    cursor: pointer;
+  }
+  
+  .accordion-icon {
+    transition: transform 0.3s ease;
+    color: var(--primary);
+  }
+  
+  .accordion-icon.rotated {
+    transform: rotate(180deg);
+  }
+  
+  .accordion-skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .accordion-skill-chip {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.05));
+    color: var(--primary);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+  }
+}
+
+@media (max-width: 480px) {
+  .accordion-root-header {
+    font-size: 1.1rem;
+  }
+  .accordion-header {
+    font-size: 1rem;
+    padding: 1rem 1.2rem;
+  }
+  .accordion-skills-grid {
+    padding: 0 1.2rem 1.2rem 1.2rem;
+  }
+}

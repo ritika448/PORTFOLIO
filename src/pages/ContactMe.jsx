@@ -60,21 +60,20 @@ const ContactMe = () => {
           <div className="contact-info-wrapper">
             <h3 style={{ fontSize: '1.8rem', marginBottom: '1.5rem' }}>Let's talk!</h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2.5rem', lineHeight: '1.7' }}>
-              I’m currently available for full-time roles and freelance opportunities.
-              If you’re looking for a MERN stack developer who loves turning complex
-              problems into simple, beautiful, and intuitive solutions, I’d love to
-              hear from you. Whether you have a project in mind or just want to
-              discuss the latest in tech, let’s start a conversation! 🚀
+              I am actively seeking full-time opportunities and strategic freelance engagements. 
+              With a strong foundation in the MERN stack and a passion for crafting efficient, 
+              scalable digital solutions, I am dedicated to delivering exceptional value. 
+              Let's connect to discuss how my expertise can align with your vision.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <div style={{
-                  background: 'var(--surface)',
+                  background: 'rgba(255,255,255,0.6)',
                   padding: '1rem',
                   borderRadius: '50%',
                   color: 'var(--primary)',
-                  border: '1px solid rgba(37, 99, 235, 0.2)'
+                  border: '1px solid rgba(0, 0, 0, 0.05)'
                 }}>
                   <Mail size={24} />
                 </div>
@@ -86,11 +85,11 @@ const ContactMe = () => {
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <div style={{
-                  background: 'var(--surface)',
+                  background: 'rgba(255,255,255,0.6)',
                   padding: '1rem',
                   borderRadius: '50%',
                   color: 'var(--primary)',
-                  border: '1px solid rgba(37, 99, 235, 0.2)'
+                  border: '1px solid rgba(0, 0, 0, 0.05)'
                 }}>
                   <Phone size={24} />
                 </div>
@@ -102,11 +101,11 @@ const ContactMe = () => {
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <div style={{
-                  background: 'var(--surface)',
+                  background: 'rgba(255,255,255,0.6)',
                   padding: '1rem',
                   borderRadius: '50%',
                   color: 'var(--primary)',
-                  border: '1px solid rgba(37, 99, 235, 0.2)'
+                  border: '1px solid rgba(0, 0, 0, 0.05)'
                 }}>
                   <MapPin size={24} />
                 </div>

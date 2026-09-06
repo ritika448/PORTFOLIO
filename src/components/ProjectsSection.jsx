@@ -1,17 +1,28 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Code } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa6';
 import jobPortalImg from '../assets/job_portal.png';
 import lmsHeroImg from '../assets/lms_hero.png';
 import hardwareStoreImg from '../assets/hardware_store.png';
+import indoreWaleImg from '../assets/indorewale.png';
 import './ProjectsSection.css';
 
 const ProjectsSection = () => {
   const projects = [
     {
+      title: 'IndoreWale.in',
+      category: 'Web Portal',
+      description: 'Discover the best of Indore – News, Events, Businesses, Jobs, Offers, Food & much more in one place.',
+      tags: ['React', 'Web Portal', 'Directory'],
+      github: 'https://github.com/',
+      demo: 'https://indorewale.in/',
+      image: indoreWaleImg,
+    },
+    {
       title: 'Job Portal (MERN Stack)',
-      description: 'A comprehensive job search and recruitment platform built with the MERN stack. Features include secure authentication, advanced job filtering, and a powerful dashboard for candidates and employers.',
+      category: 'Full Stack Platform',
+      description: 'A comprehensive job search and recruitment platform featuring secure authentication, advanced job filtering, and powerful dashboards.',
       tags: ['MERN Stack', 'Express.js', 'Redux'],
       github: 'https://github.com/',
       demo: 'http://72.61.231.123/',
@@ -19,7 +30,8 @@ const ProjectsSection = () => {
     },
     {
       title: 'LMS - Learning Management System',
-      description: 'A professional e-learning platform where students can browse courses, track their learning progress, and interact with top instructors through a clean and intuitive interface.',
+      category: 'E-Learning Platform',
+      description: 'A professional platform for students to browse courses, track progress, and interact with instructors through an intuitive interface.',
       tags: ['MERN Stack', 'React', 'Redux'],
       github: 'https://github.com/',
       demo: 'http://72.61.231.123/lms/',
@@ -27,7 +39,8 @@ const ProjectsSection = () => {
     },
     {
       title: 'Hardware Store Management',
-      description: 'A robust retail solution for hardware stores featuring fast horizontal billing, live inventory management, and integrated UPI/Scanner-based payment configurations.',
+      category: 'Retail Solution',
+      description: 'A robust solution for hardware stores featuring fast billing, live inventory management, and integrated UPI payment configurations.',
       tags: ['MERN Stack', 'Billing', 'Inventory'],
       github: 'https://github.com/',
       demo: 'http://72.61.231.123/store/dashboard',
@@ -38,16 +51,18 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="projects-section section-padding">
       <div className="container">
-        <div className="section-header">
-          <span className="hero-subtitle">My Creative Work</span>
-          <h2 className="section-title">Projects</h2>
+        <div className="projects-header">
+          <div className="projects-title-area">
+            <span className="hero-greeting">FEATURED PROJECTS</span>
+            <h2 className="section-title">Selected Work</h2>
+          </div>
         </div>
 
         <div className="projects-grid">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="project-card"
+              className="project-card glass-card"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -57,11 +72,11 @@ const ProjectsSection = () => {
                 <img src={project.image} alt={project.title} className="project-image" />
                 <div className="project-overlay">
                   <div className="project-links">
-                    <a href={project.github} className="project-link-icon" title="View Code">
-                      <FaGithub size={20} />
+                    <a href={project.github} className="project-link-icon" target="_blank" rel="noopener noreferrer" title="View Code">
+                      <FaGithub size={22} />
                     </a>
-                    <a href={project.demo} className="project-link-icon" title="Live Demo">
-                      <ExternalLink size={20} />
+                    <a href={project.demo} className="project-link-icon" target="_blank" rel="noopener noreferrer" title="Live Demo">
+                      <ExternalLink size={22} />
                     </a>
                   </div>
                 </div>
@@ -74,9 +89,6 @@ const ProjectsSection = () => {
                 </div>
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
-                <a href={project.demo} className="project-btn-lite" target="_blank" rel="noopener noreferrer">
-                  {project.title} <ExternalLink size={14} style={{ marginLeft: '5px' }} />
-                </a>
               </div>
             </motion.div>
           ))}
