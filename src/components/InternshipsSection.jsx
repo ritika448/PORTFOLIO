@@ -29,7 +29,7 @@ const ExperienceSection = () => {
       company: 'Krishaa Soft',
       logoUrl: 'https://logo.clearbit.com/krishaasoft.com',
       role: 'MERN Stack Developer',
-      period: 'Jan 2026 - Present',
+      period: 'Jan 2026 - Jun 2026',
       location: 'Indore, India',
       description: 'Developing high-performance web applications using the MERN stack. Responsible for building scalable backend architectures with Node.js and Express, designing intuitive frontends in React, and managing complex MongoDB databases. Collaborating with cross-functional teams to deliver end-to-end digital solutions.',
       tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Redux'],

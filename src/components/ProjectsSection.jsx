@@ -5,20 +5,10 @@ import { FaGithub } from 'react-icons/fa6';
 import jobPortalImg from '../assets/job_portal.png';
 import lmsHeroImg from '../assets/lms_hero.png';
 import hardwareStoreImg from '../assets/hardware_store.png';
-import indoreWaleImg from '../assets/indorewale.png';
 import './ProjectsSection.css';
 
 const ProjectsSection = () => {
   const projects = [
-    {
-      title: 'IndoreWale.in',
-      category: 'Web Portal',
-      description: 'Discover the best of Indore – News, Events, Businesses, Jobs, Offers, Food & much more in one place.',
-      tags: ['React', 'Web Portal', 'Directory'],
-      github: 'https://github.com/',
-      demo: 'https://indorewale.in/',
-      image: indoreWaleImg,
-    },
     {
       title: 'Job Portal (MERN Stack)',
       category: 'Full Stack Platform',
